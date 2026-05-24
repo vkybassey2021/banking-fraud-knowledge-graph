@@ -2,6 +2,11 @@
 A Data Semantics project using OWL, RDF, GraphDB, and SPARQL to expose fraud-linked transaction patterns in banking data.
 # Connecting the Dots: A Knowledge Graph for Exposing Fraud-Linked Transaction Patterns in Banking Data
 
+Due to the size of the original IBM AML dataset (~5 million transactions), the full dataset is not included in this repository. The project uses a stratified sample containing all labelled laundering transactions and a subset of normal transactions for scalable RDF transformation and semantic querying.
+
+**Original dataset source:
+https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml**
+
 ## Overview
 
 This project explores how semantic knowledge graphs can reduce fragmentation in anti-money laundering (AML) transaction data and improve the interpretability of suspicious financial behaviour.
