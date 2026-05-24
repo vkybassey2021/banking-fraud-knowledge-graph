@@ -1,0 +1,806 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2026/4/untitled-ontology-14/"
+     xml:base="http://www.semanticweb.org/user/ontologies/2026/4/untitled-ontology-14/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:banking-fraud-kg="http://www.semanticweb.org/banking-fraud-kg#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/banking-fraud-kg"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#belongsToBank -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#belongsToBank">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#belongsToPattern -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#belongsToPattern">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasFraudIndicator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasFraudIndicator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasPaymentCurrency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasPaymentCurrency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Currency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasPaymentFormat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasPaymentFormat">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasReceiverAccount -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasReceiverAccount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasReceivingCurrency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasReceivingCurrency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Currency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasSenderAccount -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasSenderAccount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#ownedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#ownedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasAmountPaid -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasAmountPaid">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasAmountReceived -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasAmountReceived">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#hasTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#hasTimestamp">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#isLaundering -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/banking-fraud-kg#isLaundering">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Currency"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Currency"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Currency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#Currency">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#Entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#FraudIndicator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#PaymentFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#ACH -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#ACH">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80006A5E0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80006A5E0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_01467"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_8000EBD30 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_8000EBD30">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80011F990 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80011F990">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80020C5B0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80020C5B0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_020"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80044A5D0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80044A5D0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_800737690 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_800737690">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_021174"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_8007A5B70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_8007A5B70">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_00220"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80098A3D0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80098A3D0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_010"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_800EE6B70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_800EE6B70">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_010"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_8013C4030 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_8013C4030">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0240229"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_8090E8EB0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_8090E8EB0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0048309"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80BC62F10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80BC62F10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0217"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80F025640 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80F025640">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0024856"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_80FD27570 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_80FD27570">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0119"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_811B83280 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_811B83280">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0048309"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_811C597B0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_811C597B0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0150240"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_811C599A0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_811C599A0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0222"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Account_812D22980 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Account_812D22980">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account"/>
+        <banking-fraud-kg:belongsToBank rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank_0119"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_00220 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_00220">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_0024856 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_0024856">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_0048309 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_0048309">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_0119 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_0119">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_01467 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_01467">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_0150240 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_0150240">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_020 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_020">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_021174 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_021174">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_0217 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_0217">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_0222 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_0222">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Bank_0240229 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Bank_0240229">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#EUR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#EUR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Currency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Pattern_Cycle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Pattern_Cycle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Pattern_FanOut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Pattern_FanOut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Pattern_GatherScatter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Pattern_GatherScatter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#LaunderingPattern"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_FanOut"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80011F990"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800737690"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2848.96</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2848.96</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/01 00:06</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_GatherScatter"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80044A5D0"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800EE6B70"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18721.78</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18721.78</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/06 08:41</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_GatherScatter"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80098A3D0"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80044A5D0"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18030.25</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18030.25</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/07 16:48</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_FanOut"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80020C5B0"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800737690"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4200.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4200.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/02 09:15</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_005">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_FanOut"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_8000EBD30"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800737690"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5100.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5100.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/02 11:20</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_006 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_006">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_GatherScatter"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#WireTransfer"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80044A5D0"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800EE6B70"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7600.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7600.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/03 08:45</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_007 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_007">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_GatherScatter"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#WireTransfer"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80098A3D0"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80044A5D0"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6900.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6900.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/03 14:10</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_008">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_Cycle"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800737690"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80020C5B0"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8000.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8000.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/04 09:25</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_009 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_009">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_Cycle"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#WireTransfer"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_8000EBD30"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800737690"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7900.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7900.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/04 13:40</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_FanOut"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80020C5B0"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80011F990"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3200.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3200.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/05 10:12</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_011 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_011">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_GatherScatter"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#ACH"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80044A5D0"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_8000EBD30"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6400.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6400.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/05 16:18</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#Transaction_012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#Transaction_012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Transaction"/>
+        <banking-fraud-kg:belongsToPattern rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Pattern_Cycle"/>
+        <banking-fraud-kg:hasFraudIndicator rdf:resource="http://www.semanticweb.org/banking-fraud-kg#FraudIndicator_Laundering"/>
+        <banking-fraud-kg:hasPaymentCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#EUR"/>
+        <banking-fraud-kg:hasPaymentFormat rdf:resource="http://www.semanticweb.org/banking-fraud-kg#WireTransfer"/>
+        <banking-fraud-kg:hasReceiverAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_800737690"/>
+        <banking-fraud-kg:hasReceivingCurrency rdf:resource="http://www.semanticweb.org/banking-fraud-kg#USD"/>
+        <banking-fraud-kg:hasSenderAccount rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Account_80098A3D0"/>
+        <banking-fraud-kg:hasAmountPaid rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9100.00</banking-fraud-kg:hasAmountPaid>
+        <banking-fraud-kg:hasAmountReceived rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9100.00</banking-fraud-kg:hasAmountReceived>
+        <banking-fraud-kg:hasTimestamp>2022/09/06 11:32</banking-fraud-kg:hasTimestamp>
+        <banking-fraud-kg:isLaundering rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</banking-fraud-kg:isLaundering>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#USD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#USD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#Currency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/banking-fraud-kg#WireTransfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/banking-fraud-kg#WireTransfer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/banking-fraud-kg#PaymentFormat"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
